@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>SiskoApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-card >
+    <ion-card-content>
+      Lütfen sizden istenilen bilgileri aşağıdaki alanlara giriniz.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-range min="0.00" max="200" color="secondary" [(ngModel)]="kilo" (ngModelChange)="hesapla()">
+      <ion-label slot="start">Kilo</ion-label>
+      <ion-label slot="end">{{kilo}} kg</ion-label>
+    </ion-range>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-range min="0.00" max="300" color="secondary" [(ngModel)]="boy" (ngModelChange)="hesapla()">
+      <ion-label slot="start">Boy</ion-label>
+      <ion-label slot="end">{{boy}} cm</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>Vücut Kitle İndeksiniz:{{sonuc}} kg/m2</ion-card-subtitle>
+      <ion-card-title>{{vki}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  
+  <div>
+    <img style="display: block; margin: auto;" src={{src}} alt="">
+  </div>
+
+
+</ion-content>
